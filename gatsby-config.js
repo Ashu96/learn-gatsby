@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Marvel blog`,
-    description: `Marvel blog serve best scene`,
+    title: `Travel shop`,
+    description: `Travel shop | Best travel blogs`,
     author: `@ashu96`,
   },
   plugins: [
@@ -22,8 +22,8 @@ module.exports = {
         name: `Marvel Blog`,
         short_name: `Marvel`,
         start_url: `/`,
-        background_color: `##2B6CB0`,
-        theme_color: `#3182CE`,
+        background_color: `#3A3F50`,
+        theme_color: `#65D7EB`,
         display: `standalone`,
         icon: `src/assets/logo/logoPink-512x512.png`, // This path is relative to the root of the site.
       },
