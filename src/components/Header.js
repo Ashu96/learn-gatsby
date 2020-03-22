@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
 
-const Header = ({ siteTitle }) => {
+const Header = ({siteTitle}) => {
   const [showShadow, setShowShadow] = useState(false)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
         showShadow ? "shadow-lg" : ""
       }`}
     >
-      <div className="container mx-auto p-3">
+      <div className="container mx-auto flex items-baseline  p-3">
         <Link
           to="/"
           className="flex items-baseline text-3xl text-brand-blue font-heading tracking-wide"
@@ -40,7 +40,10 @@ const Header = ({ siteTitle }) => {
           >
             <path d="M8.4 12H2.8L1 15H0V5h1l1.8 3h5.6L6 0h2l4.8 8H18a2 2 0 110 4h-5.2L8 20H6l2.4-8z" />
           </svg>
-          Travel Shop
+          {siteTitle}
+        </Link>
+        <Link className="ml-4 text-lg text-brand-primary font-body" to="/about">
+          About
         </Link>
       </div>
     </header>

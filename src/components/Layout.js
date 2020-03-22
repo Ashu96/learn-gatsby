@@ -1,13 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Header from "./Header"
 
@@ -17,6 +10,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -33,7 +27,7 @@ const Layout = ({ children }) => {
               to="/"
               className="mb-2 md:mb-0 flex items-baseline text-3xl text-brand-blue font-heading tracking-wide"
             >
-              Travel Shop
+              {data.site.siteMetadata.title}
             </Link>
             <div className="md:ml-4 font-body">
               <span className="mr-4">All rights reserved</span>
