@@ -42,7 +42,7 @@ const Header = ({siteTitle}) => {
           </svg>
           {siteTitle}
         </Link>
-        <Link className="ml-4 text-lg text-brand-primary font-body" to="/about">
+        <Link className="ml-4 text-lg text-brand-primary hover:text-brand-blue font-heading tracking-wider" to="/about">
           About
         </Link>
       </div>
