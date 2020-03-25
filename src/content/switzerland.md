@@ -1,7 +1,7 @@
 ---
 title: Welcome to Switzerland
 date: 2020-01-10
-path: /welcome-to-switzerland
+path: /blog/welcome-to-switzerland
 description: Switzerland, officially the Swiss Confederation, is a country situated in the confluence of western, central, and southern Europe. It is a federal republic composed of 26 cantons, with federal authorities seated in Bern.
 
 banner: https://images.unsplash.com/photo-1528493366314-e317cd98dd52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80

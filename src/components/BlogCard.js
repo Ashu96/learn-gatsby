@@ -10,7 +10,6 @@ export default function BlogCard(props) {
       } lg:max-w-4xl mb-10 lg:mb-16 shadow-lg`}
     >
       <div className="relative flex justify-center lg:w-1/2">
-        {/* <div className={`absolute -top-half ${props.imageOnRight ? 'right-0' : 'left-0'} w-56 h-56 custom`}></div> */}
         <img
           className="w-full shadow-lg lg:shadow-2xl z-10"
           src={props.imageSrc}
@@ -25,7 +24,7 @@ export default function BlogCard(props) {
           {props.title}
         </h3>
         <p className="mb-8 text-gray-700 font-body">{props.body}</p>
-        <Button label="Read more" withIcons link={`blogs/${props.path}`} />
+        <Button label="Read more" withIcons link={`${props.path}`} />
       </div>
     </div>
   )
@@ -36,4 +35,5 @@ BlogCard.propTypes = {
   imageSrc: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 }

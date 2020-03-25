@@ -1,15 +1,10 @@
 import React from "react"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
-import Button from "../components/Button"
-import Lottie from "lottie-react-web"
-import travelAnimationData from "../assets/animations/travel.json"
 
 const BACKGROUND_FILL = "#F8F8F8"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
     <section className="bg-white">
       <div className="container mx-auto flex flex-col lg:flex-row">
         <div className="flex flex-col items-start lg:w-1/2 p-4 md:p-6 lg:px-10 lg:py-20">
@@ -20,11 +15,7 @@ const IndexPage = () => (
             Wanna Read latest travel blogs?
           </h1>
         </div>
-        <div className="relative lg:w-1/2 mx-auto p-4 md:p-6 lg:px-10 lg:py-20">
-          <Lottie
-            options={{ animationData: travelAnimationData, loop: true }}
-          />
-        </div>
+        <div className="relative lg:w-1/2 mx-auto p-4 md:p-6 lg:px-10 lg:py-20"></div>
       </div>
     </section>
 

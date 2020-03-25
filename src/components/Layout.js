@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen bg-brand-primary">{children}</main>
       <footer className="bg-brand-secondary">
         <div className="container mx-auto flex flex-col md:flex-row justify-between md:items-center px-6 py-10 text-white">
           <div className="flex flex-col md:flex-row md:items-center mb-2 md:mb-0">

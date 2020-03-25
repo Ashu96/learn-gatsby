@@ -1,7 +1,7 @@
 ---
 title: Welcome to New Zealand
 date: 2020-02-10
-path: /welcome-to-new-zealand
+path: /blog/welcome-to-new-zealand
 description: New Zealand is a sovereign island country in the southwestern Pacific Ocean. The country has two main landmasses—the North Island, and the South Island and around 600 smaller islands.
 
 banner: https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80

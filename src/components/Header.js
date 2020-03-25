@@ -45,6 +45,9 @@ const Header = ({siteTitle}) => {
         <Link className="ml-4 text-lg text-brand-primary hover:text-brand-blue font-heading tracking-wider" to="/about">
           About
         </Link>
+        <Link className="ml-4 text-lg text-brand-primary hover:text-brand-blue font-heading tracking-wider" to="/blogs">
+          Blogs
+        </Link>
       </div>
     </header>
   )

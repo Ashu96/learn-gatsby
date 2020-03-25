@@ -1,22 +1,17 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
-const path = require(`path`)
+const path = require('path')
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  const result = await graphql(`
-    {
+  const {createPage} = actions
+  const results = await graphql(`
+    query {
       allMarkdownRemark {
         edges {
           node {
+            id
             frontmatter {
+              description
               path
+              title
               imagePath {
                 relativePath
               }
@@ -26,22 +21,20 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `)
-  if (result.errors) {
-    console.error(result.errors)
+  if (results.errors) {
+    console.error(results.errors)
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log(
-      "exports.createPages -> node.frontmatter.imagePath.relativePath",
-      node.frontmatter.imagePath.relativePath
-    )
+  results.data.allMarkdownRemark.edges.forEach(edge => {
+    const { node } = edge
+    const { frontmatter } = node
+  
     createPage({
-      path: `blogs${node.frontmatter.path}`,
-      component: path.resolve(`src/templates/post.js`),
+      path: frontmatter.path,
+      component: path.resolve('src/templates/blog-post.js'),
       context: {
-        slug: node.frontmatter.path,
-        imagePath: node.frontmatter.imagePath.relativePath,
-      },
+        imageRelativePath: frontmatter.imagePath.relativePath
+      }
     })
   })
 }

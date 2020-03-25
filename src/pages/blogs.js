@@ -1,28 +1,24 @@
 import React from "react"
-import { useStaticQuery } from "gatsby"
-
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
 import BlogCard from "../components/BlogCard"
-// import Button from "../components/Button"
+import Layout from "../components/Layout"
+import { graphql } from "gatsby"
 
 const BACKGROUND_FILL = "#FAFAFA"
 
 const BlogPage = ({ data }) => {
-  const { allMarkdownRemark } = data // data.markdownRemark holds your post data
+  const { allMarkdownRemark } = data
   const { edges } = allMarkdownRemark
 
   return (
     <Layout>
-      <SEO title="Home" />
       <section className="bg-white">
         <div className="container mx-auto flex flex-col lg:flex-row lg:items-center p-4 md:p-6 lg:px-10 lg:py-20">
           <div className="flex flex-col items-start lg:w-1/2">
             <p className="mb-2 max-w-lg lg:text-lg lg:max-w-xl uppercase font-body tracking-wide">
-              The Marvel shop
+              Welcome to Travel Shop
             </p>
-            <h1 className="mb-12 text-3xl md:text-4xl text-gray-900  font-display">
-              Read our latest Marvel stories on blog page
+            <h1 className="mb-12 text-3xl md:text-4xl text-gray-900 font-display">
+              Read our blogs filled with adventure stories
             </h1>
           </div>
           <div className="relative lg:w-1/2 mx-auto">
@@ -48,16 +44,18 @@ const BlogPage = ({ data }) => {
           ></path>
         </svg>
         <div className="container mx-auto flex flex-col items-center p-6">
-          {edges.map(({ node }) => {
-            const { path, description, title, date, banner } = node.frontmatter
+          {edges.map(edge => {
+            const { node } = edge
+            const { frontmatter } = node
+
             return (
               <BlogCard
-                key={path}
-                tag={date}
-                title={title}
-                body={description}
-                imageSrc={banner}
-                path={path}
+                key={node.id}
+                title={frontmatter.title}
+                imageSrc={frontmatter.banner}
+                tag={frontmatter.date}
+                body={frontmatter.description}
+                path={frontmatter.path}
               />
             )
           })}
@@ -70,16 +68,16 @@ const BlogPage = ({ data }) => {
 export default BlogPage
 
 export const pageQuery = graphql`
-  {
+  query {
     allMarkdownRemark {
       edges {
         node {
           frontmatter {
+            banner
+            date(fromNow: true)
+            description
             path
             title
-            date(fromNow: true)
-            banner
-            description
           }
         }
       }
