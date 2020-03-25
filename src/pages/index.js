@@ -1,6 +1,8 @@
 import React from "react"
+import Lottie from 'lottie-react-web'
 import Layout from "../components/Layout"
 
+import animationData from '../assets/animations/travel.json'
 const BACKGROUND_FILL = "#F8F8F8"
 
 const IndexPage = () => (
@@ -15,7 +17,10 @@ const IndexPage = () => (
             Wanna Read latest travel blogs?
           </h1>
         </div>
-        <div className="relative lg:w-1/2 mx-auto p-4 md:p-6 lg:px-10 lg:py-20"></div>
+        <div className="relative lg:w-1/2 mx-auto p-4 md:p-6 lg:px-10 lg:py-20">
+          <Lottie options={{animationData}}/>
+
+        </div>
       </div>
     </section>
 
