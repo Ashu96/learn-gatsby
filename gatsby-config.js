@@ -19,10 +19,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Marvel Blog`,
-        short_name: `Marvel`,
+        name: `Travel shop`,
+        short_name: `Travel`,
         start_url: `/`,
-        background_color: `#3A3F50`,
+        background_color: `#FAFAFA`,
         theme_color: `#65D7EB`,
         display: `standalone`,
         icon: `src/assets/logo/logoPink-512x512.png`, // This path is relative to the root of the site.
